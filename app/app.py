@@ -15,7 +15,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["https://hr-management-frontend-yamd.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
