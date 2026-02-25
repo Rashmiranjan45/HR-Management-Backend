@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import select
 from app.db.config import sessionDep
-from app.model.attendance import Attendance
+from app.model.attendance import Attendance, CreateAttendance
 from app.api.admin.dependencies import get_current_admin
 from app.model.employee import Employee
 
 router = APIRouter(prefix="/attendance", tags=["Attendance"], dependencies=[Depends(get_current_admin)])
 
 @router.post("/")
-def mark_attendance(att: Attendance, session: sessionDep):
+def mark_attendance(att: CreateAttendance, session: sessionDep):
     employee = session.get(Employee, att.employee_id)
     if not employee:
         raise HTTPException(404, "Employee not found")
