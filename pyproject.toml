@@ -1,0 +1,16 @@
+[project]
+name = "hr-management-system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "email-validator>=2.3.0",
+    "fastapi>=0.133.0",
+    "mysql-connector-python>=9.6.0",
+    "python-dotenv>=1.2.1",
+    "python-jose>=3.5.0",
+    "python-multipart>=0.0.22",
+    "sqlmodel>=0.0.37",
+    "uvicorn[standard]>=0.41.0",
+]
