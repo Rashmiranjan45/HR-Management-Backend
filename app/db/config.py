@@ -7,13 +7,10 @@ import os
 load_dotenv()
 
 
-# SQLite database file
-sqlite_url = os.getenv("DB_URI")
+sql_url = os.getenv("DB_URI")
 
 engine = create_engine(
-    sqlite_url,
-    echo=True,
-    connect_args={"check_same_thread": False}  # required for SQLite + FastAPI
+    sql_url
 )
 
 
